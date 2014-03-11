@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Rodrigo Ortega Cuesta">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript">
+		if (localStorage.login!=null) {
+			location.href='map.html';
+		}
+	</script>
+
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/login.css">
+
+	<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/fastclick.js" type="text/javascript"></script>
+	<script src="js/login.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+	<div id="main" class="container-fluid">
+		<div id="header" class="row">
+			<img id="headerLogo" src="images/icon_appasionate.png" alt="logo">
+			<h3>Appasionate</h3>
+		</div>
+
+		<div id="content" class="row">
+			<div id="loginContainer">
+				<h3>Iniciar sesión</h3>
+				<form role="form" method="POST">
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon-envelope"> Email</span>
+						    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+						</div>
+	  				</div>
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon-lock"> Contraseña</span>
+					    	<input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+					    </div>
+	  				</div>
+	  				<div class="checkbox">
+	    			<label>
+	      				<input id="recordar" type="checkbox"> Recordarme
+	    			</label>
+	  				</div>
+	  				<div id = "btnsLoginContainer">
+	  					<button onclick="onClickLogin()" id="submitLogin" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+	  					<button onclick="onClickIrRegistro()" id="registerLogin" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Registrarse</button>
+					</div>
+				</form>
+			</div>
+
+			<div style="display: none" id="registroContainer">
+				<h3>Registrarse</h3>
+				<form role="form" method="POST">
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon-envelope"> Email</span>
+						    <input type="email" class="form-control" id="inputEmailReg" placeholder="Email">
+						</div>
+	  				</div>
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon-lock"> Contraseña</span>
+					    	<input type="password" class="form-control" id="inputPasswordReg" placeholder="Contraseña">
+					    </div>
+	  				</div>
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon-lock"> Repetir</span>
+					    	<input type="password" class="form-control" id="inputRepetirPasswordReg" placeholder="Repetir contraseña">
+					    </div>
+	  				</div>
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon glyphicon-user"> Nombre</span>
+					    	<input type="text" class="form-control" id="inputNombreReg" placeholder="Nombre">
+					    </div>
+	  				</div>
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon glyphicon-user"> Apellidos</span>
+					    	<input type="text" class="form-control" id="inputApellidosReg" placeholder="Apellidos">
+					    </div>
+	  				</div>
+	  				<div class="form-group">
+					    <div class="input-group">
+						    <span class="input-group-addon glyphicon glyphicon-barcode"> Código</span>
+					    	<input type="text" class="form-control" id="inputCodReg" placeholder="Código de usuario">
+					    </div>
+	  				</div>
+	  				<div id = "btnsLoginContainer">
+	  					<button onclick="onClickRegistrarse()" id="submitRegistro" type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+	  					<button onclick="onClickVolverLogin()" id="volverLogin" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> Volver</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="loginErrors"></div>
+
+		<div id="footer" class="row">
+			<h5>© Copyright 2014 - Rodrigo Ortega Cuesta</h5>
+		</div>
+	</div>
+
+	<div id="loadingModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  		<div id="modalDialogLoader" class="modal-dialog modal-sm">
+    		<div id="modalContentLoader" class="modal-content">
+     	 		<img id="loaderGif" src="images/loader.GIF" alt="loader">
+    		</div>
+  		</div>
+	</div>
+</body>
+</html>
